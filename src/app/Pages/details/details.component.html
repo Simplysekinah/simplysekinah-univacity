@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/search"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ program.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img [src]="program.image" alt="Program Image" />
+    <ion-card-header>
+      <ion-card-title>{{ program.university }}</ion-card-title>
+      <ion-card-subtitle>{{ program.location }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Degree:</strong> {{ program.degree }}</p>
+      <p><strong>Mode:</strong> {{ program.mode }}</p>
+      <p><strong>Duration:</strong> {{ program.duration }}</p>
+      <p><strong>Language:</strong> {{ program.language }}</p>
+      <p><strong>Cost:</strong> {{ program.cost }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

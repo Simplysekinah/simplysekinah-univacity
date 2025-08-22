@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@import "@ionic/angular/css/core.css";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+  --ion-item-box-shadow: none;
+  --ion-toolbar-box-shadow: none;
+}
+ion-item,
+ion-card,
+ion-toolbar,
+ion-header,
+ion-card {
+  --box-shadow: none !important;
+  --background: transparent; /* optional, if you want no background */
+}

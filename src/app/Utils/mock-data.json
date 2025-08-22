@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "title": "Computer Technologies and Environmental Engineering",
+    "university": "University of Liverpool",
+    "location": "Canada",
+    "degree": "Masters",
+    "mode": "Fulltime",
+    "duration": "2 years",
+    "language": "English",
+    "cost": "€363.36",
+    "image": "image.png",
+    "images": "top-image.png"
+  },
+  {
+    "id": 2,
+    "title": "Computer Technologies and Environmental Engineering",
+    "university": "University of Manchester",
+    "location": "UK",
+    "degree": "Masters",
+    "mode": "Part-time",
+    "duration": "1.5 years",
+    "language": "English",
+    "cost": "€420.00",
+    "image": "image.png",
+    "images": "top-image.png"
+  }
+]

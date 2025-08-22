@@ -1,0 +1,58 @@
+<div class="border-2 border-gray-400 flex flex-col gap-3">
+  <ion-card class="program-card">
+    <div class="image-container">
+      <div class="image-wrapper">
+        <img class="main-img" [src]="program.image" alt="University Image" />
+      </div>
+      <section class="trademark">
+        <ion-icon class="size-5" name="checkmark-circle-outline"></ion-icon>
+        <ion-text class="partner-badge">Official Partner</ion-text>
+      </section>
+      <img class="image" [src]="program.images" alt="University Image" />
+    </div>
+
+    <ion-card-content >
+      <h2 class="program-title font-medium text-[#333333] ">{{ program.title }}</h2>
+      <section class="uni">
+        <ion-icon class="size-5" name="checkmark-circle-outline"></ion-icon>
+        <p class="university-name">{{ program.university }}</p>
+      </section>
+
+      <section class="flex gap-3 max-md:gap-2">
+        <section class="flex gap-2 items-center">
+          <ion-icon class="size-5" name="flag-outline"></ion-icon>
+          <span class="text-[#5D5D5D] font-normal">{{ program.location }}</span>
+        </section>
+        <section class="flex gap-2 items-center">
+          <ion-icon class="size-5" name="school-outline"></ion-icon>
+          <span class="text-[#5D5D5D] font-normal">{{ program.degree }}</span>
+        </section>
+        <section class="flex gap-2 items-center">
+          <ion-icon class="size-5" name="time-outline"></ion-icon>
+          <span class="text-[#5D5D5D] font-normal">{{ program.mode }}</span>
+        </section>
+        <section class="flex gap-2 items-center">
+          <ion-icon class="size-5" name="calendar-outline"></ion-icon>
+          <span class="text-[#5D5D5D] font-normal">{{ program.duration }}</span>
+        </section>
+      </section>
+
+      <section  class="flex gap-2">
+        <ion-icon class="size-5" name="language-outline"></ion-icon>
+        <span>{{ program.language }}</span>
+      </section>
+      <ion-row class="flex justify-between">
+        <section  class="flex gap-2 items-center">
+          <ion-icon class="size-5" name="cash-outline"></ion-icon>
+          <span style="font-size: 1.2rem;" class="font-bold text-[#333333] span">€{{ program.cost }}/per semester</span>
+        </section>
+        <div class="action-icons flex flex-row" style="display: flex;">
+          <ion-icon class="text-[#184EC9]" name="heart-outline"></ion-icon>
+          <ion-icon class="text-[#184EC9]" name="share-social-outline"></ion-icon>
+        </div>
+      </ion-row>
+
+    </ion-card-content>
+  </ion-card>
+
+</div>

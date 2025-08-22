@@ -1,0 +1,176 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>Filter Programs</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Location</ion-label>
+    <ion-input [(ngModel)]="filters.location"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Degree</ion-label>
+    <ion-select [(ngModel)]="filters.degree">
+      <ion-select-option value="Masters">Masters</ion-select-option>
+      <ion-select-option value="Bachelors">Bachelors</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Mode</ion-label>
+    <ion-select [(ngModel)]="filters.mode">
+      <ion-select-option value="Fulltime">Fulltime</ion-select-option>
+      <ion-select-option value="Part-time">Part-time</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="full" (click)="applyFilters()">Apply Filters</ion-button>
+</ion-content> -->
+
+
+<!-- <ion-modal class="filter-modal">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Filter</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <section class="tuition-section">
+      <h2>Tuition fee</h2>
+      <div class="tuition-values">
+        <span>Min $50,000</span>
+        <span>Max $120,000</span>
+      </div>
+      <ion-range min="50000" max="120000" step="1000" dualKnobs></ion-range>
+    </section>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Institutes</ion-label>
+        <ion-select placeholder="None selected"></ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Education Level</ion-label>
+        <ion-select placeholder="None selected"></ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Country</ion-label>
+        <ion-select multiple placeholder="United States, United Kingdom"></ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Discipline</ion-label>
+        <ion-select multiple placeholder="Law, Mathematics"></ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Study Language</ion-label>
+        <ion-select placeholder="None selected"></ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Attendance</ion-label>
+        <ion-select placeholder="None selected"></ion-select>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+  <ion-footer>
+    <div class="footer-actions">
+      <ion-button fill="clear">Clear all</ion-button>
+      <ion-button expand="block">View 1024 Results</ion-button>
+    </div>
+  </ion-footer>
+</ion-modal> -->
+
+
+<ion-modal #filterModal class="filter-modal">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Filter</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="closeModal()">Close</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <section class="tuition-section">
+      <h2>Tuition fee</h2>
+      <div class="tuition-values">
+        <span>Min ${{ filters.tuition.min }}</span>
+        <span>Max ${{ filters.tuition.max }}</span>
+      </div>
+      <ion-range
+        [(ngModel)]="filters.tuition"
+        min="50000"
+        max="120000"
+        step="1000"
+        dualKnobs
+      ></ion-range>
+    </section>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Institutes</ion-label>
+        <ion-select [(ngModel)]="filters.institutes" placeholder="None selected">
+          <ion-select-option value="Harvard">Harvard</ion-select-option>
+          <ion-select-option value="Oxford">Oxford</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Education Level</ion-label>
+        <ion-select [(ngModel)]="filters.educationLevel" placeholder="None selected">
+          <ion-select-option value="Bachelors">Bachelors</ion-select-option>
+          <ion-select-option value="Masters">Masters</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Country</ion-label>
+        <ion-select [(ngModel)]="filters.countries" multiple placeholder="Select countries">
+          <ion-select-option value="United States">United States</ion-select-option>
+          <ion-select-option value="United Kingdom">United Kingdom</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Discipline</ion-label>
+        <ion-select [(ngModel)]="filters.disciplines" multiple placeholder="Select disciplines">
+          <ion-select-option value="Law">Law</ion-select-option>
+          <ion-select-option value="Mathematics">Mathematics</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Study Language</ion-label>
+        <ion-select [(ngModel)]="filters.studyLanguage" placeholder="None selected">
+          <ion-select-option value="English">English</ion-select-option>
+          <ion-select-option value="French">French</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Attendance</ion-label>
+        <ion-select [(ngModel)]="filters.attendance" placeholder="None selected">
+          <ion-select-option value="Fulltime">Fulltime</ion-select-option>
+          <ion-select-option value="Part-time">Part-time</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+  <ion-footer>
+    <div class="footer-actions">
+      <ion-button fill="clear" (click)="clearFilters()">Clear all</ion-button>
+      <ion-button expand="block" (click)="applyFilters()">View 1024 Results</ion-button>
+    </div>
+  </ion-footer>
+</ion-modal>

@@ -1,0 +1,30 @@
+<main class="p-4">
+    <app-upper-nav></app-upper-nav>
+    <section class="flex flex-col gap-3">
+        <div class="overflow-auto">
+
+        </div>
+        <ion-title>Search Result</ion-title>
+        <div  *ngFor="let program of filteredPrograms">
+            <app-details [program]="program" (click)="goToDetail(program.id)"></app-details>
+        </div>
+    </section>
+    <!-- <div>
+        <ion-header>
+            <ion-toolbar>
+                <ion-title>Search Programs</ion-title>
+                <ion-buttons slot="end">
+                    <ion-button (click)="openFilterModal()">Filter</ion-button>
+                </ion-buttons>
+            </ion-toolbar>
+        </ion-header>
+    
+        <ion-content>
+            <ion-searchbar placeholder="Search programs..."></ion-searchbar>
+    
+            <div *ngFor="let program of filteredPrograms">
+                <app-details [program]="program" (click)="goToDetail(program.id)"></app-details>
+            </div>
+        </ion-content>
+    </div> -->
+</main>

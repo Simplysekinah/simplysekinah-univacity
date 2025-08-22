@@ -1,0 +1,138 @@
+div {
+    padding: 10px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    border-radius: 25px;
+}
+
+ion-card {
+    box-shadow: none !important;
+}
+
+.program-card {
+    position: relative;
+    overflow: hidden;
+
+    .image-container {
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 500px;
+            object-fit: fill;
+            border-radius: 50px;
+            /* clip-path: path('M0,0 H100% V140 Q50% 180 0 140 Z') !important; */
+        }
+
+        .trademark {
+            display: flex !important;
+            /* flex-direction: row; */
+            gap: 5px ;
+            align-items: center;
+            position: absolute;
+             top: 10%;
+            right: 9%;
+            color: #184EC9;
+            background-color: white !important;
+            padding: 6px;
+            border-radius: 15px;
+            ion-icon{
+                color: #184EC9;
+                display: flex !important;
+            }
+        }
+
+        .partner-badge {
+            /* position: absolute; */
+            color: #184EC9 !important;
+
+        }
+
+        .image {
+            width: 90px;
+            height: 90px;
+            position: absolute;
+            left: 8%;
+            border-radius: 20px;
+            bottom: 20%;
+        }
+    }
+
+    .logo-row {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 10px;
+
+        .logo {
+            height: 30px;
+        }
+    }
+
+    .program-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    .uni{
+        display: flex !important;
+        align-items: center;
+        gap: 8px;
+        .university-name {
+            font-size: 0.95rem;
+            color: #666;
+            /* margin-bottom: 10px; */
+        }
+        ion-icon{
+            color: #184EC9 !important;
+        }
+    }
+
+    .info-grid {
+        font-size: 0.85rem;
+
+        ion-icon {
+            /* margin-right: 5px; */
+            /* vertical-align: middle; */
+            font-size: 18px;
+            /* color: #184EC9 !important; */
+        }
+        ion-col{
+            /* display: flex !important; */
+            gap: 8px;
+        }
+    }
+
+    .action-icons {
+        display: flex !important;
+        flex-direction: row !important;
+        /* justify-content: flex-end; */
+        gap: 35px !important;
+        /* margin-top: 15px; */
+
+        ion-icon {
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+    }
+    ion-card-content{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+
+
+@media (max-width:800px) {
+    .main-img{
+        height: 350px !important;
+    }
+    h2,.span{
+        font-size: 16px !important;
+    }
+    .image-container img{
+        border-radius: 30px !important;
+    }
+}
