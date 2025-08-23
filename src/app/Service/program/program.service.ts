@@ -14,7 +14,7 @@ export class ProgramService {
     return this.programs;
   }
 
-  getProgramById(id: number): Program {
+  getProgramById(id: string): Program {
     return this.programs.find(p => p.id === id)!;
   }
 }

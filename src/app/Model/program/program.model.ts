@@ -1,5 +1,5 @@
 export interface Program {
-  id: number;
+  id: string;
   title: string;
   university: string;
   location: string;
@@ -10,6 +10,10 @@ export interface Program {
   cost: string;
   image: string;
   images: string;
+  content:string;
+  description:string;
+  structure:string;
+  // requirement:[]
 }
 
 

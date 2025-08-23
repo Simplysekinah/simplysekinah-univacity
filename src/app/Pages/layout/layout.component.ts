@@ -19,6 +19,7 @@ import { CommonModule } from '@angular/common';
 export class LayoutComponent {
   programs: Program[] = [];
   filteredPrograms: Program[] = [];
+  id: string = ''
 
   constructor(
     private modalCtrl: ModalController,
@@ -29,8 +30,8 @@ export class LayoutComponent {
   ngOnInit() {
     this.programs = this.programService.getPrograms();
     this.filteredPrograms = [...this.programs];
-    console.log(this.filteredPrograms);
-    console.log(this.programs);
+    // console.log(this.filteredPrograms);
+    // console.log(this.programs);
   }
 
   openSortModal(){}
@@ -51,7 +52,9 @@ export class LayoutComponent {
     }
   }
 
-  goToDetail(programId: number) {
-    this.router.navigate(['/detail', programId]);
+  goToDetail(programId: string) {
+    console.log(programId);
+    this.id = programId
+    this.router.navigate([`/details/${this.id}`]);
   }
 }

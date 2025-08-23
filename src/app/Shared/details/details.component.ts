@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Program } from '../../Model/program/program.model';
 import { IonicModule } from '@ionic/angular';
 
@@ -9,9 +9,10 @@ import { IonicModule } from '@ionic/angular';
   styleUrl: './details.component.css'
 })
 export class DetailsComponent {
+  @Output() productselected = new EventEmitter<string>()
+  @Input() program!: Program;
 navigateToDetail() {
-
+  this.productselected.emit(this.program.id)
 }
-@Input() program!: Program;
 
 }

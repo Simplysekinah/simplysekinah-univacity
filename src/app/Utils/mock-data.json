@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "title": "Computer Technologies and Environmental Engineering",
     "university": "University of Liverpool",
     "location": "Canada",
@@ -10,10 +10,13 @@
     "language": "English",
     "cost": "€363.36",
     "image": "image.png",
-    "images": "top-image.png"
+    "images": "top-image.png",
+    "content":"The master's programme in Environmental Systems Sciences / Climate and Environmental Monitoring at the University of Graz offers a wide spectrum of disciplines, challenging students to develop improved strategies and solutions. This unique programme equips students with the skills to tackle environmental problems effectively.",
+     "description":"Studying Environmental Systems Sciences / Climate and Environmental Monitoring at the University of Graz opens up a world of opportunities. By combining various disciplines and developing cross-sectional approaches, students gain a deep understanding of natural sciences and technological aspects. The programme emphasizes the importance of legal aspects in handling chemical compounds, running processes, and plants. Through interactions with diverse research groups and engaging in small research projects, students can tailor their learning experience to suit their interests and career goals.",
+    "structure":"Studying Environmental Systems Sciences / Climate and Environmental Monitoring at the University of Graz opens up a world of opportunities. By combining various disciplines and developing cross-sectional approaches, students gain a deep understanding of natural sciences and technological aspects. The programme emphasizes the importance of legal aspects in handling chemical compounds, running processes, and plants. Through interactions with diverse research groups and engaging in small research projects, students can tailor their learning experience to suit their interests and career goals."
   },
   {
-    "id": 2,
+    "id": "2",
     "title": "Computer Technologies and Environmental Engineering",
     "university": "University of Manchester",
     "location": "UK",
@@ -23,6 +26,9 @@
     "language": "English",
     "cost": "€420.00",
     "image": "image.png",
-    "images": "top-image.png"
+    "images": "top-image.png",
+    "content":"The master's programme in Environmental Systems Sciences / Climate and Environmental Monitoring at the University of Graz offers a wide spectrum of disciplines, challenging students to develop improved strategies and solutions. This unique programme equips students with the skills to tackle environmental problems effectively",
+    "description":"Studying Environmental Systems Sciences / Climate and Environmental Monitoring at the University of Graz opens up a world of opportunities. By combining various disciplines and developing cross-sectional approaches, students gain a deep understanding of natural sciences and technological aspects. The programme emphasizes the importance of legal aspects in handling chemical compounds, running processes, and plants. Through interactions with diverse research groups and engaging in small research projects, students can tailor their learning experience to suit their interests and career goals.",
+    "structure":"Studying Environmental Systems Sciences / Climate and Environmental Monitoring at the University of Graz opens up a world of opportunities. By combining various disciplines and developing cross-sectional approaches, students gain a deep understanding of natural sciences and technological aspects. The programme emphasizes the importance of legal aspects in handling chemical compounds, running processes, and plants. Through interactions with diverse research groups and engaging in small research projects, students can tailor their learning experience to suit their interests and career goals."
   }
 ]

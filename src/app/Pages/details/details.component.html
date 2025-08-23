@@ -1,13 +1,13 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/search"></ion-back-button>
     </ion-buttons>
     <ion-title>{{ program.title }}</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content>
+<!-- <ion-content *ngIf="program">
   <ion-card>
     <img [src]="program.image" alt="Program Image" />
     <ion-card-header>
@@ -22,4 +22,207 @@
       <p><strong>Cost:</strong> {{ program.cost }}</p>
     </ion-card-content>
   </ion-card>
-</ion-content>
+</ion-content> -->
+
+
+
+
+<ion-card-content class="!p-7">
+  <header class="h-74 w-full bg-cover bg-center rounded-2xl relative"
+    [ngStyle]="{ 'background-image': 'url(' + program.image + ')' }">
+    <div class="bg-white !px-2 !py-2 flex items-center rounded-[50%] text-2xl absolute top-4 left-5" (click)="navigate()">
+      <ion-icon defaultHref="/search" class=" text-2xl" name="chevron-back-outline"></ion-icon>
+    </div>
+    <img class="absolute bottom-10 left-5 rounded-[10px] w-[80px] h-[80px]" [src]="program.images" alt="">
+    <div class="absolute bottom-10 right-4 flex gap-3">
+      <div class="bg-white !px-2 !py-2 flex items-center rounded-[50%] text-2xl">
+        <ion-icon class=" text-2xl" name="heart-outline"></ion-icon>
+      </div>
+      <div class="bg-white !px-2 !py-2 flex items-center rounded-[50%] text-2xl">
+        <ion-icon class=" text-2xl" name="share-social-outline"></ion-icon>
+      </div>
+    </div>
+  </header>
+  <section class="flex flex-col gap-2">
+    <div class="program-title font-medium text-[#333333] ">{{ program.title }}</div>
+    <div class="flex gap-2">
+      <div class="flex gap-2">
+        <ion-icon class="size-5" name="checkmark-circle-outline"></ion-icon>
+        {{ program.university }}
+      </div>
+      <div class="flex gap-2 items-center">
+        <ion-icon class="size-5" name="flag-outline"></ion-icon>
+        <p>{{program.location}}</p>
+      </div>
+    </div>
+    <div class="font-normal text-[#666666]">{{program.content}}</div>
+  </section>
+  <section class="flex justify-between border-y-2 !py-5 !my-4">
+    <div class="flex gap-2 items-center">
+      <ion-icon class="size-5" name="eye-outline"></ion-icon>
+      <p class="text-[#666666]">191126</p>
+      <p class="text-[#666666]">Views</p>
+    </div>
+    <div class="flex gap-2 items-center">
+      <ion-icon class="size-5" name="trending-up-outline"></ion-icon>
+      <p class="text-[#666666]">293612</p>
+      <p class="text-[#666666]">Impressions</p>
+    </div>
+  </section>
+  <section class="flex flex-col gap-2.5">
+    <h2 class="program-title font-medium text-[#333333] ">Program Breakdown</h2>
+    <div class="flex gap-5 flex-wrap">
+      <div class="flex gap-2.5 items-center !w-[30%] !py-2">
+        <ion-icon class="size-5" name="star"></ion-icon>
+        <div>
+          <p>{{ program.duration }}</p>
+          <p class="text-[#666666]">Duration</p>
+        </div>
+      </div>
+      <div class="flex gap-2.5 items-center !w-[30%]">
+        <ion-icon class="size-5" name="star"></ion-icon>
+        <div>
+          <p>{{ program.degree }}</p>
+          <p class="text-[#666666]">Level</p>
+        </div>
+      </div>
+      <div class="flex gap-2.5 items-center !w-[30%]">
+        <ion-icon class="size-5" name="star"></ion-icon>
+        <div>
+          <p>{{ program.cost }}/per semester</p>
+          <p class="text-[#666666]">Tuition Fee</p>
+        </div>
+      </div>
+      <div class="flex gap-2.5 items-center !w-[30%]">
+        <ion-icon class="size-5" name="star"></ion-icon>
+        <div>
+          <p>On Campus</p>
+          <p class="text-[#666666]">Attendance</p>
+        </div>
+      </div>
+      <div class="flex gap-2.5 items-center !w-[30%]">
+        <ion-icon class="size-5" name="star"></ion-icon>
+        <div>
+          <p>{{ program.mode }}</p>
+          <p class="text-[#666666]">Attendance</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="flex flex-col gap-3.5">
+    <h2 class="program-title font-medium text-[#333333]">Description</h2>
+    <p class="text-[#666666]">{{program.description}}</p>
+    <div class="flex items-center justify-center">
+      <button class="flex gap-3 rounded-full items-center bg-[#D9EDFF] font-medium text-[#184EC9] w-[70%] h-[60px] text-center justify-center">Read More <ion-icon class="size-4" name="chevron-down-outline"></ion-icon></button>
+    </div>
+  </section>
+  <section class="flex gap-3 flex-col">
+    <h2 class="program-title font-medium text-[#333333] ">Requirements</h2>
+    <div class="flex gap-3 !font-normal border-t-2 !py-3 border-[#33333377]">
+      <ion-icon class="size-5" name="checkmark-done-outline"></ion-icon>
+      <p class="text-[#666666]">Completed relevant degree program</p>
+    </div>
+    <div class="flex gap-3 !font-normal border-t-2 !py-3 border-[#33333377]">
+      <ion-icon class="size-5" name="checkmark-done-outline"></ion-icon>
+      <p class="text-[#666666]">Copy of a valid Identification Card or Passport</p>
+    </div>
+    <div class="flex gap-3 !font-normal border-t-2 !py-3 border-[#33333377]">
+      <ion-icon class="size-5" name="checkmark-done-outline"></ion-icon>
+      <p class="text-[#666666]">Degree Diploma</p>
+    </div>
+    <div class="flex gap-3 !font-normal border-t-2 !py-3 border-[#33333377]">
+      <ion-icon class="size-5" name="checkmark-done-outline"></ion-icon>
+      <p class="text-[#666666]">Documents of completed university degree with a minimum study duration of three years (bachelor's program or diploma's program)</p>
+    </div>
+    <div class="flex items-center justify-center">
+      <button class="flex gap-3 rounded-full items-center bg-[#D9EDFF] text-[#184EC9] w-[70%] h-[60px] text-center justify-center font-medium">Read More <ion-icon class="size-4" name="chevron-down-outline"></ion-icon></button>
+    </div>
+  </section>
+  <section class="flex gap-3.5 flex-col">
+    <h2 class="program-title font-medium text-[#333333] ">Structure</h2>
+    <p class="text-[#666666]">{{program.structure}}</p>
+    <div class="flex items-center justify-center">
+      <button class="flex gap-3 rounded-full items-center bg-[#D9EDFF] text-[#184EC9] font-medium w-[70%] h-[60px] text-center justify-center">Read More <ion-icon class="size-4" name="chevron-down-outline"></ion-icon></button>
+    </div>
+  </section>
+  <section class="flex flex-col gap-2.5">
+    <h2 class="program-title font-medium text-[#333333] ">Fees</h2>
+    <p>Services fee is €50</p>
+    <p>For International degree students, the fee is €726,72</p>
+    <div class="flex gap-5 flex-wrap">
+      <div class="flex gap-2.5 items-center !w-[30%] !py-2">
+        <ion-icon class="size-5" name="star"></ion-icon>
+        <div>
+          <p>{{ program.duration }}</p>
+          <p class="text-[#666666]">Duration</p>
+        </div>
+      </div>
+      <div class="flex gap-2.5 items-center !w-[30%]">
+        <ion-icon class="size-5" name="star"></ion-icon>
+        <div>
+          <p>{{ program.degree }}</p>
+          <p class="text-[#666666]">Level</p>
+        </div>
+      </div>
+      <div class="flex gap-2.5 items-center !w-[30%]">
+        <ion-icon class="size-5" name="star"></ion-icon>
+        <div>
+          <p>{{ program.cost }}/per semester</p>
+          <p class="text-[#666666]">Tuition Fee</p>
+        </div>
+      </div>
+      <div class="flex gap-2.5 items-center !w-[30%]">
+        <ion-icon class="size-5" name="star"></ion-icon>
+        <div>
+          <p>On Campus</p>
+          <p class="text-[#666666]">Attendance</p>
+        </div>
+      </div>
+      <div class="flex gap-2.5 items-center !w-[30%]">
+        <ion-icon class="size-5" name="star"></ion-icon>
+        <div>
+          <p>{{ program.mode }}</p>
+          <p class="text-[#666666]">Attendance</p>
+        </div>
+      </div>
+    </div>
+  </section>
+    <section class="flex gap-3 flex-col">
+    <h2 class="program-title font-medium text-[#333333] ">Extra Information</h2>
+    <div class="flex gap-3 !font-normal border-t-2 !py-3 border-[#33333377]">
+      <ion-icon class="size-5" name="checkmark-done-outline"></ion-icon>
+      <div>
+        <p class="text-[#1E1E1E]">Main, Portierloge Wall, Portierloge ReSoWi, Portierloge Hauptgebäude</p>
+        <p class="text-[#666666]">Campuse(s)</p>
+      </div>
+    </div>
+    <div class="flex gap-3 !font-normal border-t-2 !py-3 border-[#33333377]">
+      <ion-icon class="size-5" name="checkmark-done-outline"></ion-icon>
+      <div>
+        <p class="text-[#1E1E1E]">Winter 2024</p>
+        <p class="text-[#666666]">Intakes</p>
+      </div>
+    </div>
+    <div class="flex gap-3 !font-normal border-t-2 !py-3 border-[#33333377]">
+      <ion-icon class="size-5" name="checkmark-done-outline"></ion-icon>
+      <div>
+        <p class="text-[#1E1E1E]">English Language</p>
+        <p class="text-[#666666]">Study Language</p>
+      </div>
+    </div>
+  </section>
+  <section class="flex flex-col gap-3.5">
+    <div class="flex gap-3 !py-5">
+      <img class=" rounded-[10px] w-[80px] h-[80px]" [src]="program.images" alt="">
+      <div>
+        <div class="program-title font-medium text-[#333333] ">{{ program.title }}</div>
+        <div class="program-title font-medium text-[#333333] ">{{ program.cost }}/ per Semester</div>
+      </div>
+    </div>
+    <div class="flex items-center justify-around border-t-2 !py-5 border-[#33333377]">
+      <button (click)="navigate()" class="flex gap-3 rounded-full items-center bg-[#D9EDFF] text-[#184EC9] w-[40%] h-[60px] text-center justify-center font-medium"><ion-icon defaultHref="/search" class=" text-2xl" name="chevron-back-outline"></ion-icon>Back </button>
+      <button class="flex gap-3 rounded-full items-center  text-[#D9EDFF] bg-[#184EC9] w-[50%] h-[60px] text-center justify-center font-medium">Read More <ion-icon class=" text-2xl" name="chevron-forward-outline"></ion-icon></button>
+    </div>
+
+  </section>
+</ion-card-content>

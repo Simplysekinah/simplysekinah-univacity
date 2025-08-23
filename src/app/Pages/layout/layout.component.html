@@ -6,7 +6,7 @@
         </div>
         <ion-title>Search Result</ion-title>
         <div  *ngFor="let program of filteredPrograms">
-            <app-details [program]="program" (click)="goToDetail(program.id)"></app-details>
+            <app-details [program]="program" (productselected)="goToDetail($event)"></app-details>
         </div>
     </section>
     <!-- <div>
