@@ -2,6 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, ModalController } from '@ionic/angular';
+import { ViewChild } from '@angular/core';
+import { IonModal } from '@ionic/angular';
+import { InsituteModalComponent } from '../insitute-modal/insitute-modal.component';
 
 @Component({
   selector: 'app-filtered-modal',
@@ -12,17 +15,6 @@ import { IonicModule, ModalController } from '@ionic/angular';
 export class FilteredModalComponent {
   resultCount = 1024;
 
-  // clearFilters() {
-    
-  // }
-
-  // viewResults() {
-  // }
-  //  filters = {
-  //   location: '',
-  //   degree: '',
-  //   mode: ''
-  // };
 
   filters = {
     tuition: { min: 50000, max: 120000 },
@@ -35,27 +27,8 @@ export class FilteredModalComponent {
   };
   constructor(private modalCtrl: ModalController) {}
 
-  applyFilters() {
-    this.modalCtrl.dismiss(this.filters);
-  }
-
-  closeModal() {
-    this.modalCtrl.dismiss();
-  }
   @ViewChild(IonModal) filterModal!: IonModal;
   
-  
-  // openModal() {
-  //   this.filterModal.present();
-  // }
-  
-  // closeModal() {
-  //   this.filterModal.dismiss();
-  // }
-  
-  // applyFilters() {
-  //   this.closeModal();
-  // }
   
   clearFilters() {
     this.filters = {
@@ -68,11 +41,24 @@ export class FilteredModalComponent {
       attendance: ''
     };
   }
+
+
+   min = 50000;
+  max = 120000;
+
+
+  close() { this.modalCtrl.dismiss(); }
+  clearAll() {  }
+  apply() { this.modalCtrl.dismiss({ applied: true }); }
+
+  async institute(){
+    const modal = await this.modalCtrl.create({
+      component: InsituteModalComponent,
+      cssClass: 'custom-filter-modal',
+      backdropDismiss:true
+    });
+    await modal.present();
+  }
 }
 
 
-import { ViewChild } from '@angular/core';
-import { IonModal } from '@ionic/angular';
-
-export class YourPageComponent {
-}

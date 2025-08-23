@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" (click)="close()">
+        <ion-icon name="arrow-back-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Institutes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Search Bar -->
+  <div class="p-4">
+    <ion-item lines="none" class="search-bar rounded-full shadow-sm">
+      <ion-icon name="search-outline" slot="start"></ion-icon>
+      <ion-input [(ngModel)]="searchTerm" placeholder="Search institutes"></ion-input>
+    </ion-item>
+  </div>
+
+  <!-- List -->
+  <ion-list>
+    <ion-item *ngFor="let inst of institutes" lines="none"
+      [ngClass]="{'selected-item': selectedId === inst.id}"
+      (click)="selectedId = inst.id">
+      
+      <ion-avatar slot="start">
+        <img [src]="inst.logo" alt="Logo" />
+      </ion-avatar>
+
+      <ion-label>
+        <h2 class="font-medium text-sm">{{ inst.name }}
+          <span class="count-pill">{{ inst.count }}</span>
+        </h2>
+        <div class="text-xs text-gray-500 flex items-center gap-1">
+          <ion-icon name="flag-outline"></ion-icon>
+          {{ inst.country }}
+        </div>
+      </ion-label>
+
+      <!-- <ion-radio slot="end" [checked]="selectedId === inst.id"></ion-radio> -->
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <div class="flex gap-3 p-4">
+    <ion-button fill="outline" shape="round" expand="block" (click)="clearAll()">Clear all</ion-button>
+    <ion-button shape="round" expand="block" class="grow" (click)="apply()">Apply Filter</ion-button>
+  </div>
+</ion-footer>

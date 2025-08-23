@@ -18,3 +18,15 @@ ion-card {
   --box-shadow: none !important;
   --background: transparent; /* optional, if you want no background */
 }
+.custom-filter-modal {
+  --width: 90% !important;
+  --height: 80% !important;
+  --border-radius: 20px;
+  --background: #fff;
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+ion-modal::part(backdrop) {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+}

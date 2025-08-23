@@ -1,69 +1,52 @@
-.filter-modal {
-  --background: #000;
-  --border-radius: 16px;
 
-  ion-toolbar {
-    --background: transparent;
-    --color: #000;
-    font-weight: bold;
-    font-size: 1.2rem;
+.custom-filter-modal {
+  --width: 92%;
+  --height: 85%;
+  --border-radius: 20px;
+  --background: #ffffff;
+  --box-shadow: 0 8px 28px rgba(16, 24, 40, 0.2);
+  margin: auto;
+}
+ion-modal::part(backdrop) {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+.chip-input {
+  --background: #f7f9fc;
+  --border-radius: 12px;
+  --padding-start: 10px;
+  --inner-padding-end: 10px;
+  border: 1px solid #e5e7eb;
+  min-height: 44px;
+  border-radius: 10px
+}
+
+ion-range {
+  --bar-background: #e5e7eb;
+  --bar-background-active: #184EC9;
+  --knob-background: #184EC9;
+  --pin-background: #184EC9;
+  --pin-color: #fff;
+}
+
+.section-list {
+  .item-title { font-weight: 600; }
+  .item-sub   { color: #6b7280; font-size: 12px; margin: 10px 0; }
+  ion-item{
+    display: flex !important;
+    gap: 10px !important;
   }
+}
 
-  .tuition-section {
-    padding: 1rem;
-
-    h2 {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .tuition-values {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.9rem;
-      color: #666;
-      margin-bottom: 0.5rem;
-    }
-
-    ion-range {
-      --bar-background: #ccc;
-      --knob-background: #007aff;
-    }
-  }
-
-  ion-item {
-    --padding-start: 1rem;
-    --inner-padding-end: 1rem;
-    font-size: 0.95rem;
-  }
-
-  .footer-actions {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-
-    ion-button {
-      font-weight: 600;
-    }
-
-    ion-button:first-child {
-      color: #999;
-    }
-
-    ion-button:last-child {
-      background: #007aff;
-      color: #fff;
-    }
-  }
-
-  @media (max-width: 600px) {
-    .footer-actions {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    ion-button {
-      width: 100%;
-    }
-  }
+.filter-footer ion-toolbar {
+  --background: #fff;
+}
+.btn-row {
+  display: flex;
+  gap: 12px;
+  padding: 12px 16px;
+}
+.btn-row .grow {
+  flex: 1;
 }
