@@ -1,0 +1,46 @@
+.chip-input {
+  --background: #f7f9fc;
+  --border-radius: 12px;
+  --padding-start: 10px;
+  --inner-padding-end: 10px;
+  border: 1px solid #e5e7eb;
+  min-height: 44px;
+  border-radius: 10px
+}
+
+.search-bar {
+  --background: #f7f7f7;
+  --border-radius: 9999px;
+  padding: 0 12px;
+}
+
+.count-pill {
+  background: #e5f0ff;
+  color: #184EC9;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 12px;
+  margin-left: 6px;
+}
+
+.selected-item {
+  background: #f1f5ff;
+  border-radius: 12px;
+}
+
+ion-radio {
+  --color: #184EC9;
+  --color-checked: #184EC9;
+}
+
+ion-footer ion-button {
+  font-weight: 600;
+}
+
+.grow {
+  flex: 1;
+}
+img{
+    border-radius: 10px !important;
+}

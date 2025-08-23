@@ -10,21 +10,19 @@
 </ion-header>
 
 <ion-content>
-  <!-- Search Bar -->
-  <div class="p-4">
-    <ion-item lines="none" class="search-bar rounded-full shadow-sm">
+  
+  <div class="!p-4">
+    <ion-item lines="none" class="chip-input">
       <ion-icon name="search-outline" slot="start"></ion-icon>
-      <ion-input [(ngModel)]="searchTerm" placeholder="Search institutes"></ion-input>
+      <ion-input placeholder="Search institutes" inputmode="numeric"></ion-input>
     </ion-item>
   </div>
 
-  <!-- List -->
   <ion-list>
-    <ion-item *ngFor="let inst of institutes" lines="none"
-      [ngClass]="{'selected-item': selectedId === inst.id}"
-      (click)="selectedId = inst.id">
-      
-      <ion-avatar slot="start">
+    <ion-item *ngFor="let inst of institutes" lines="none" [ngClass]="{'selected-item': selectedId === inst.id}"
+      (click)="selectedId = inst.id" class="!py-3">
+
+      <ion-avatar slot="start" class="!mr-3">
         <img [src]="inst.logo" alt="Logo" />
       </ion-avatar>
 
@@ -37,15 +35,16 @@
           {{ inst.country }}
         </div>
       </ion-label>
-
+      <input type="radio" class="size-5" [checked]="selectedId === inst.id">
       <!-- <ion-radio slot="end" [checked]="selectedId === inst.id"></ion-radio> -->
     </ion-item>
   </ion-list>
 </ion-content>
 
 <ion-footer>
-  <div class="flex gap-3 p-4">
+  <div class="flex gap-3 !p-6 border-[#1e1e1e8a] border-t-2 rounded-t-2xl">
     <ion-button fill="outline" shape="round" expand="block" (click)="clearAll()">Clear all</ion-button>
     <ion-button shape="round" expand="block" class="grow" (click)="apply()">Apply Filter</ion-button>
   </div>
 </ion-footer>
+
