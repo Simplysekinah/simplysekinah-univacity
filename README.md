@@ -1,5 +1,60 @@
 # IconicIntern
 
+Clone the repository
+```bash
+git clone https://github.com/Simplysekinah/simplysekinah-univacity.git
+cd simplysekinah-univacity
+npm install
+
+## Development server
+To run the project locally 
+```bash
+ng serve
+
+##Component Architecture
+app--------->Model->ProgramModel---TypeScript interface defining the structure of a program object
+            |Pages->Layout(ProgramSearchPage): Displays a searchable list of programs with filter options.
+                  ->Details(ProgramDetailPage): Detailed view of a selected program.
+            |Service->program.service: Provides mock data and filtering logic.
+            |Shared->DetailsCard:For the details card displayed in the program search page
+                    |filteredModal: Detailed view of the filtered modal
+                    |instituteModal: Detailed view of the institute modal
+                    |UpperNav: Detailed view of the program search page navigation
+            |Utils->This is the folder that mock.data.json is stored
+
+app/
+├── Model/
+│   └── ProgramModel.ts         # Defines the structure of a program object
+├── Pages/
+│   ├── Layout/                 # ProgramSearchPage: searchable list with filters
+│   └── Details/                # ProgramDetailPage: detailed view of a selected program
+├── Service/
+│   └── program.service.ts      # Provides mock data and filtering logic
+├── Shared/
+│   ├── DetailsCard/            # Card component for displaying program info
+│   ├── filteredModal/          # Modal for filtering programs
+│   ├── instituteModal/         # Modal for viewing institute campuses
+│   └── UpperNav/               # Navigation bar for the search page
+└── Utils/
+    └── mock-data.json          # Static mock data used throughout the app
+
+
+IONIC COMPONENTS WAS USED FOR UI CONSISTENCY
+
+##Routing
+Routing was done using Angular router
+
+
+##Assumption and designs decison
+
+Mock data was used instead of using a live api fetching
+modal components are standalone for further reuseability
+Responsive design was prioritized
+
+##Limitations
+No backend integration all datas are static
+
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.11.
 
 ## Development server
