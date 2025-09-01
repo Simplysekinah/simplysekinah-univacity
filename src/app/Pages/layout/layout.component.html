@@ -4,7 +4,7 @@
         <div class="overflow-auto">
 
         </div>
-        <ion-title>Search Result</ion-title>
+        <ion-title class=" text-[#141414]">Search Result</ion-title>
         <div  *ngFor="let program of filteredPrograms">
             <app-details [program]="program" (productselected)="goToDetail($event)"></app-details>
         </div>
