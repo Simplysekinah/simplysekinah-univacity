@@ -38,9 +38,19 @@
     <div class="flex justify-between text-xs text-gray-500 mb-3">
       <span>50k</span><span>120k</span>
     </div> -->
-    <ion-range dualKnobs="true" [min]="50000" [max]="120000" [step]="1000" color="primary" pin="false"
+    <!-- <ion-range dualKnobs="true" [min]="50000" [max]="120000" [step]="1000" color="primary" pin="false"
       class="custom-range mb-1">
+    </ion-range> -->
+
+    <div class="flex justify-between mb-2">
+      <span>{{ rangeValue.lower | number }}k</span>
+      <span>{{ rangeValue.upper | number }}k</span>
+    </div>
+
+    <ion-range dualKnobs="true" [min]="50000" [max]="120000" [step]="1000" color="primary" pin="false"
+      [(ngModel)]="rangeValue" class="custom-range mb-1">
     </ion-range>
+
 
     <div class="flex justify-between text-xs text-gray-500 mb-3">
       <span>50k</span>

@@ -23,12 +23,19 @@ ion-modal::part(backdrop) {
   border-radius: 10px
 }
 
-ion-range {
+/* ion-range {
   --bar-background: #e5e7eb;
   --bar-background-active: #184EC9;
   --knob-background: #184EC9;
   --pin-background: #184EC9;
   --pin-color: #fff;
+} */
+  .custom-range {
+  --bar-background: #f1f1f1;
+  --bar-background-active: #1a73e8;
+  --knob-background: #1a73e8;
+  --knob-size: 18px;
+  --bar-height: 4px;
 }
 
 .section-list {
@@ -50,4 +57,15 @@ ion-range {
 }
 .btn-row .grow {
   flex: 1;
+}
+
+@media (max-width:600px) {
+  .btn-row {
+  gap: 6px !important;
+}
+  .btn-row ion-button{
+    font-size: 14px !important;
+    font-weight: 200 !important;
+    color: red;
+  }
 }
